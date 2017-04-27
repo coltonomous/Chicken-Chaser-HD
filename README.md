@@ -10,3 +10,7 @@ Controls: Left and Right arrow keys to move side to side. "P" to pause and unpau
 Dependencies: Python 2.7.3 pygame for Python 2.7.3 cx_freeze for Python 2.7.3 (for setup file only) Python's random library (for randomly spawning the obstacles.
 
 Licensing: None. Go ham, just be careful of the assets.
+
+Special Thanks:
+Sentdex, whose stellar YouTube tutorials helped make this possible.
+The amazing Python community for developing such awesome tools!
