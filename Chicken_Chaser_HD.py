@@ -72,9 +72,9 @@ clock = pygame.time.Clock()
 
 def draw_intro_screen():
     """
-    Displays the game's start menu. It has a play button and a quit button.
-    It also has an 'animated' chicken_sprite that moves back and forth across the screen.
+    Start menu.
     """
+    # Animating chicken sprite.
     chick_x = xDisplay * 0.1875
     chick_y = yDisplay * 0.55
     chick_dir = True
@@ -111,10 +111,8 @@ def draw_intro_screen():
 
 def draw_button(message, x, y, width, height, inactive_color, active_color, action):
     """
-    Generates a single button at coordinates x and y of width and height.
-    When the mouse hovers over the button, the color changes from inactive_color
-    to active_color. Message is displayed on the button. Clicking on the
-    button activates the action which can be either 'Play' or 'Quit'.
+    Generates button at x, y of width and height. Color changes from inactive_color
+    to active_color on hovor. Action can be either 'Play' or 'Quit'.
     """
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
@@ -140,22 +138,21 @@ def draw_button(message, x, y, width, height, inactive_color, active_color, acti
 
 def draw_tractor(tractor_x, tractor_y):
     """
-    Draws the tractor to the display at position
-    tractor_x, tractor_y.
+    Draws the tractor at tractor_x, tractor_y.
     """
     gameDisplay.blit(carSprite, (tractor_x, tractor_y))
 
 
 def draw_chicken(chick_x, chick_y):
     """
-    Draws a chicken to gameDisplay at chick_x and chick_y.
+    Draws a chicken at chick_x and chick_y.
     """
     gameDisplay.blit(chickenSprite, (chick_x, chick_y))
 
 
 def blood_splatter(blood_x, blood_y):
     """
-    Draws blood at coordinates based on blood_x and blood_y.
+    Draws blood at coordinates based on blood_x, blood_y.
     Coordinates are manually adjusted to center blood over chicken.
     """
     gameDisplay.blit(bloodSplatter, (blood_x - (chickenWidth / 2),
@@ -164,8 +161,7 @@ def blood_splatter(blood_x, blood_y):
 
 def display_message(horiz, vert, font_size, text):
     """
-    Writes text of font_size to display at
-    horiz and vert coordinates.
+    Writes text of font_size to display at horiz, vert.
     """
     print_text = pygame.font.Font("fixedsys.ttf", font_size)
     text_surface = print_text.render(text, True, colors["black"])
@@ -176,8 +172,7 @@ def display_message(horiz, vert, font_size, text):
 
 def count(game_count, chicken_count):
     """
-    Prints the updating game_count and chicken_count
-    to the display.
+    Displays updating game_count and chicken_count.
     """
     score_text = "Score: " + str(game_count)
     chicken_text = "Remaining: " + str(chicken_count)
@@ -187,8 +182,7 @@ def count(game_count, chicken_count):
 
 def crash():
     """
-    Prints assorted insults to the display and generates buttons to
-    play again or quit.
+    Game over menu.
     """
     global lossCount
 
@@ -214,7 +208,6 @@ def crash():
 def paused(pause):
     """
     Pauses and unpauses the game and the music.
-    Displays 'Paused' to the display.
     """
     pygame.mixer.music.pause()
 
@@ -234,9 +227,7 @@ def paused(pause):
 
 def win(score, chickens):
     """
-    Displays stats about last played game, including
-    the final score and the average score obtained per chicken
-    that was generated. Generates buttons to play again or quit.
+    Win menu.
     """
     pygame.mixer.music.fadeout(2000)
 
