@@ -1,12 +1,6 @@
 import pygame
 import random
 
-""" This is the source code for a game where you control the lateral movements of a tractor
-to avoid chickens. Score is awarded for being on course to hit the chickens without actually hitting them and
-is subtracted for hitting and killing chickens. Vehicle movements are controlled with the side arrow keys.
-Additionally, the game can be paused by pressing the "p" key. I would like to
-specially acknowledge 'sentdex', whose YouTube tutorials helped make this possible."""
-
 ########################################################################################################################
 ################################################## Game Setup ##########################################################
 ########################################################################################################################
